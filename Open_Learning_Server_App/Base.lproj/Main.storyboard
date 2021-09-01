@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2gp-Sl-gac">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OHP-tt-AKr">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,17 +13,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Open_Learning_Server_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Open learning server a new way to teach and learn" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijO-2V-TVQ">
-                                <rect key="frame" x="20" y="159.5" width="374" height="41"/>
+                                <rect key="frame" x="20" y="71.5" width="335" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Learning Server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55H-Wi-5Iw">
-                                <rect key="frame" x="85.5" y="98" width="243" height="31.5"/>
+                                <rect key="frame" x="66" y="10" width="243" height="31.5"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -40,52 +40,49 @@
                             <constraint firstAttribute="trailing" secondItem="ijO-2V-TVQ" secondAttribute="trailing" constant="20" id="yOA-K1-FYq"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="Zkd-HF-iZL"/>
                     <navigationItem key="navigationItem" title="O L S Home" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="9MV-Pm-f3e">
                         <barButtonItem key="leftBarButtonItem" title="Sign in" id="jK0-E3-yan"/>
-                        <barButtonItem key="rightBarButtonItem" title="Courses" id="v98-fx-VIG">
-                            <connections>
-                                <segue destination="pY4-z2-X53" kind="show" id="XNu-1H-vqV"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Courses" id="v98-fx-VIG"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="84"/>
+            <point key="canvasLocation" x="2857" y="931"/>
         </scene>
-        <!--Course Listing-->
+        <!--Courses-->
         <scene sceneID="dXz-Rn-fwS">
             <objects>
                 <viewController id="pY4-z2-X53" customClass="CourseListing" customModule="Open_Learning_Server_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dHj-EQ-D88">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="q3e-ag-YyZ">
-                                <rect key="frame" x="0.0" y="159" width="414" height="737"/>
+                                <rect key="frame" x="0.0" y="71" width="375" height="596"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CourseCell" rowHeight="91" id="Ql5-EJ-fNB" customClass="CourseCell" customModule="Open_Learning_Server_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="414" height="91"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ql5-EJ-fNB" id="Umu-wK-ZfI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRl-7K-3oz">
-                                                    <rect key="frame" x="20" y="11" width="278" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="247" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYp-qg-LWs">
-                                                    <rect key="frame" x="20" y="42" width="374" height="38"/>
+                                                    <rect key="frame" x="16" y="42" width="343" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price: $160" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yts-PU-uOn">
-                                                    <rect key="frame" x="308" y="11" width="86" height="21"/>
+                                                    <rect key="frame" x="273" y="11" width="86" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="GQg-VT-Ine"/>
                                                     </constraints>
@@ -116,7 +113,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COURSES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHg-pa-2TC">
-                                <rect key="frame" x="20" y="113" width="374" height="26"/>
+                                <rect key="frame" x="20" y="25" width="335" height="26"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -134,6 +131,7 @@
                             <constraint firstItem="q3e-ag-YyZ" firstAttribute="leading" secondItem="u9b-tZ-XUa" secondAttribute="leading" id="z1g-RV-lQn"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Courses" image="chart.bar.doc.horizontal" catalog="system" id="S97-Bs-MsN"/>
                     <navigationItem key="navigationItem" id="I9j-sM-JDb"/>
                     <connections>
                         <outlet property="courseListsTable" destination="q3e-ag-YyZ" id="OGN-Hg-kLB"/>
@@ -141,28 +139,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81t-yi-hQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117.3913043478262" y="84.375"/>
+            <point key="canvasLocation" x="2687" y="-569"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="X2u-f6-xjd">
+        <!--Sign in-->
+        <scene sceneID="iQt-Oy-8VJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2gp-Sl-gac" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WUw-q0-qa8">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="06R-gp-0ur"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gbn-ha-aMh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="7n6-tz-dlg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L2C-3n-Tmc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="E4c-Rd-OlC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sign in" image="rectangle.and.pencil.and.ellipsis" catalog="system" id="leK-ks-iml"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xal-z5-Ylg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-449.27536231884062" y="84.375"/>
+            <point key="canvasLocation" x="2686" y="83"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="21K-gy-7Hp">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="OHP-tt-AKr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FWT-W7-9zK">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="aKf-cn-RfT"/>
+                        <segue destination="pY4-z2-X53" kind="relationship" relationship="viewControllers" id="ybj-ec-PHZ"/>
+                        <segue destination="7n6-tz-dlg" kind="relationship" relationship="viewControllers" id="qbv-He-9Sk"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="irT-Ez-Uzm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1799" y="84"/>
         </scene>
     </scenes>
     <resources>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="rectangle.and.pencil.and.ellipsis" catalog="system" width="128" height="81"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
