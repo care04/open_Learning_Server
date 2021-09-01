@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2gp-Sl-gac">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--O L S Home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Open_Learning_Server_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Open learning server a new way to teach and learn" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijO-2V-TVQ">
+                                <rect key="frame" x="20" y="159.5" width="374" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Learning Server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55H-Wi-5Iw">
+                                <rect key="frame" x="85.5" y="98" width="243" height="31.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ijO-2V-TVQ" firstAttribute="top" secondItem="55H-Wi-5Iw" secondAttribute="bottom" constant="30" id="MBI-lt-aDL"/>
+                            <constraint firstItem="55H-Wi-5Iw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="YnS-n5-VAF"/>
+                            <constraint firstItem="ijO-2V-TVQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="cQS-od-xcf"/>
+                            <constraint firstItem="55H-Wi-5Iw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cfT-OX-xVV"/>
+                            <constraint firstItem="ijO-2V-TVQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p1A-as-VMK"/>
+                            <constraint firstAttribute="trailing" secondItem="ijO-2V-TVQ" secondAttribute="trailing" constant="20" id="yOA-K1-FYq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="O L S Home" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="9MV-Pm-f3e">
+                        <barButtonItem key="leftBarButtonItem" title="Sign in" id="jK0-E3-yan"/>
+                        <barButtonItem key="rightBarButtonItem" title="Courses" id="v98-fx-VIG">
+                            <connections>
+                                <segue destination="pY4-z2-X53" kind="show" id="XNu-1H-vqV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="310" y="84"/>
+        </scene>
+        <!--Course Listing-->
+        <scene sceneID="dXz-Rn-fwS">
+            <objects>
+                <viewController id="pY4-z2-X53" customClass="CourseListing" customModule="Open_Learning_Server_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dHj-EQ-D88">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="q3e-ag-YyZ">
+                                <rect key="frame" x="0.0" y="159" width="414" height="737"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CourseCell" rowHeight="91" id="Ql5-EJ-fNB" customClass="CourseCell" customModule="Open_Learning_Server_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="91"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ql5-EJ-fNB" id="Umu-wK-ZfI">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRl-7K-3oz">
+                                                    <rect key="frame" x="20" y="11" width="278" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYp-qg-LWs">
+                                                    <rect key="frame" x="20" y="42" width="374" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price: $160" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yts-PU-uOn">
+                                                    <rect key="frame" x="308" y="11" width="86" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="GQg-VT-Ine"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RRl-7K-3oz" firstAttribute="baseline" secondItem="yts-PU-uOn" secondAttribute="baseline" id="AUv-4U-w78"/>
+                                                <constraint firstItem="RRl-7K-3oz" firstAttribute="top" secondItem="Umu-wK-ZfI" secondAttribute="topMargin" id="GGc-mV-CQZ"/>
+                                                <constraint firstItem="BYp-qg-LWs" firstAttribute="leading" secondItem="Umu-wK-ZfI" secondAttribute="leadingMargin" id="YpL-ru-ntC"/>
+                                                <constraint firstItem="yts-PU-uOn" firstAttribute="top" secondItem="Umu-wK-ZfI" secondAttribute="topMargin" id="abY-Ys-Qtd"/>
+                                                <constraint firstItem="BYp-qg-LWs" firstAttribute="top" secondItem="RRl-7K-3oz" secondAttribute="bottom" constant="10" id="aoH-bQ-cQA"/>
+                                                <constraint firstItem="BYp-qg-LWs" firstAttribute="bottom" secondItem="Umu-wK-ZfI" secondAttribute="bottomMargin" id="deP-0O-NrA"/>
+                                                <constraint firstItem="BYp-qg-LWs" firstAttribute="trailing" secondItem="Umu-wK-ZfI" secondAttribute="trailingMargin" id="iXb-HR-gUw"/>
+                                                <constraint firstItem="yts-PU-uOn" firstAttribute="trailing" secondItem="Umu-wK-ZfI" secondAttribute="trailingMargin" id="ite-bV-zCU"/>
+                                                <constraint firstItem="RRl-7K-3oz" firstAttribute="leading" secondItem="Umu-wK-ZfI" secondAttribute="leadingMargin" id="nTy-Ys-aBN"/>
+                                                <constraint firstItem="yts-PU-uOn" firstAttribute="leading" secondItem="RRl-7K-3oz" secondAttribute="trailing" constant="10" id="qwR-ic-jdK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="RRl-7K-3oz" id="7MW-bx-4kB"/>
+                                            <outlet property="price" destination="yts-PU-uOn" id="0NC-nP-chr"/>
+                                            <outlet property="shortDescription" destination="BYp-qg-LWs" id="eOu-xg-HOx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COURSES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHg-pa-2TC">
+                                <rect key="frame" x="20" y="113" width="374" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="u9b-tZ-XUa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="q3e-ag-YyZ" firstAttribute="top" secondItem="rHg-pa-2TC" secondAttribute="bottom" constant="20" id="60V-Un-Zmu"/>
+                            <constraint firstItem="q3e-ag-YyZ" firstAttribute="trailing" secondItem="u9b-tZ-XUa" secondAttribute="trailing" id="LsW-Jt-9gF"/>
+                            <constraint firstItem="rHg-pa-2TC" firstAttribute="leading" secondItem="u9b-tZ-XUa" secondAttribute="leading" constant="20" id="NHh-ng-Y8o"/>
+                            <constraint firstItem="rHg-pa-2TC" firstAttribute="top" secondItem="u9b-tZ-XUa" secondAttribute="top" constant="25" id="NxN-X1-tAV"/>
+                            <constraint firstAttribute="bottom" secondItem="q3e-ag-YyZ" secondAttribute="bottom" id="YXu-7I-1DD"/>
+                            <constraint firstItem="u9b-tZ-XUa" firstAttribute="trailing" secondItem="rHg-pa-2TC" secondAttribute="trailing" constant="20" id="vEY-hu-eHA"/>
+                            <constraint firstItem="q3e-ag-YyZ" firstAttribute="leading" secondItem="u9b-tZ-XUa" secondAttribute="leading" id="z1g-RV-lQn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="I9j-sM-JDb"/>
+                    <connections>
+                        <outlet property="courseListsTable" destination="q3e-ag-YyZ" id="OGN-Hg-kLB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81t-yi-hQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1117.3913043478262" y="84.375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="X2u-f6-xjd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2gp-Sl-gac" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WUw-q0-qa8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="06R-gp-0ur"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gbn-ha-aMh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-449.27536231884062" y="84.375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
