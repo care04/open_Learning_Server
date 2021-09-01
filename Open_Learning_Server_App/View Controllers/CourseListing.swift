@@ -12,15 +12,24 @@ class CourseListing: UIViewController {
     //MARK: Iboutlets
     @IBOutlet weak var courseListsTable: UITableView!
     
-    var courses = [Course(name: "HTML", shortDescription: "HTML short Description", price: 20)]
-    
+    var courses = [
+        Course(name: "HTML", shortDescription: "HTML short Description", price: 20, lessons: [
+                Lesson(name: "What is Html", description: "In this lesson you will learn what html is"),
+                Lesson(name: "Text Tags", description: "In This lesson you will learn about the tags that add text to your page")
+        ])
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
         courseListsTable.delegate = self
         courseListsTable.dataSource = self
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIds.coursesToCourse {
+            guard let courseController = segue.destination as? CoursePage else { return }
+            courseController.course = (sender as? Course)!
+        }
+    }
 }
 extension CourseListing: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,11 +40,12 @@ extension CourseListing: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellVariables.courseCell, for: indexPath) as? CourseCell else {
             return UITableViewCell()
         }
-        for course in courses {
-            cell.fillCell(course: course)
-        }
+        let course = courses[indexPath.row]
+        cell.fillCell(course: course)
         return cell
     }
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let course = courses[indexPath.row]
+        performSegue(withIdentifier: segueIds.coursesToCourse, sender: course)
+    }
 }
