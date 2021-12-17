@@ -15,32 +15,41 @@ class CoursePage: UIViewController {
     @IBOutlet weak var courseDescription: UILabel!
     @IBOutlet weak var lessonTable: UITableView!
     
-    var course = Course(name: "", shortDescription: "", price: 0, lessons: [Lesson]())
+    var course = updatedCourseModel(id: 0, name: "", shortDescription: "", price: 0, creator: User(name: "", password: ""), units: [Unit(name: "")])
     override func viewDidLoad() {
         super.viewDidLoad()
         lessonTable.delegate = self
         lessonTable.dataSource = self
         name.text = "Name: " + course.name
-        price.text = "$" + String(course.price)
+        price.text = "Price: " + "$" + String(course.price) + "0"
         courseDescription.text = "Description: " + course.shortDescription
     }
     override func viewDidAppear(_ animated: Bool) {
     }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == segueIds.courseToUnit {
+      guard let unitController = segue.destination as? UnitPage else { return }
+      unitController.unit = (sender as? Unit)!
+    }
+  }
     
 }
 extension CoursePage: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        course.lessons.count
+      return course.units.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellVariables.lessonCell, for: indexPath) as? LessonCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellVariables.UnitCell, for: indexPath) as? UnitCell else {
             return UITableViewCell()
         }
-        let lesson = course.lessons[indexPath.row]
-        cell.fillLessonCell(lesson: lesson)
+        let unit = course.units[indexPath.row]
+        cell.fillUnitCell(unit: unit)
         return cell
     }
     
-    
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let unit = course.units[indexPath.row]
+    performSegue(withIdentifier: segueIds.courseToUnit, sender: unit)
+  }
 }
