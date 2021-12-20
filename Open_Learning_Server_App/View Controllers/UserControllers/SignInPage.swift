@@ -31,7 +31,7 @@ class SignInPage: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SigninSegue" {
+        if segue.identifier == segueIds.SigninSegue {
             guard let UsersPage = segue.destination as? OwnedCreatedCourses else { return }
             UsersPage.user = (sender as? User)!
         }

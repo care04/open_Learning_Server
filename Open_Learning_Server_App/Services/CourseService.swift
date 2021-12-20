@@ -8,16 +8,6 @@
 import Foundation
 class CourseDataService {
     static let instance = CourseDataService()
-    private let regularCourses = [
-        Course(name: "HTML", shortDescription: "Hyper Text Markup Language", price: 20.00, unit: [
-            Unit(name: "What is Html", lessons: [Lesson(name: "", content: "")]),
-            Unit(name: "Text Tags", lessons: [Lesson(name: "", content: "")])
-        ]),
-        Course(name: "HTML", shortDescription: "Hyper Text Markup Language", price: 20, unit: [
-            Unit(name: "What is Html"),
-                Unit(name: "Text Tags", lessons: [Lesson(name: "", content: "")])
-        ])
-    ]
     private let courses = [
         updatedCourseModel(id: 3, name: "HTML Basic", shortDescription: "Hyper Text Markup Language Basics", price: 30, creator: User(name: "George", password: ""), units: [
             Unit(name: "What is html"),
@@ -42,8 +32,5 @@ class CourseDataService {
     ]
     func getCourses() -> [updatedCourseModel] {
         return courses
-    }
-    func getRegularCourses() -> [Course] {
-        return regularCourses
     }
 }

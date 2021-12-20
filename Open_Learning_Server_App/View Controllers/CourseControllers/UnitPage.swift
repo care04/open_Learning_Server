@@ -22,7 +22,6 @@ class UnitPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
       unitName.text = unit.name
       lessonTable.delegate = self
       lessonTable.dataSource = self
-      print("uji", unit)
         // Do any additional setup after loading the view.
     }
     
