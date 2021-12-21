@@ -9,22 +9,34 @@ import UIKit
 
 class OwnedCreatedCourses: UIViewController {
 
-    var user: User = User(name: "", password: "")
+    var user: User = User(name: "George", password: "")
     
     var UsersCourses: [updatedCourseModel] = []
     @IBOutlet weak var createdCoursesTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-      let courses = CourseDataService.instance.getCourses()
-      for course in courses {
-        if course.creator.name == "George"{
-          UsersCourses.append(course)
-          createdCoursesTable.reloadData()
-        }
-      }
-      createdCoursesTable.delegate = self
-      createdCoursesTable.dataSource = self
+        UsersCourses.append(contentsOf: UserDataSercice.instance.getUsersCourses())
+        createdCoursesTable.reloadData()
+        createdCoursesTable.delegate = self
+        createdCoursesTable.dataSource = self
     }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    UsersCourses.removeAll()
+    UsersCourses.append(contentsOf: UserDataSercice.instance.getUsersCourses())
+    createdCoursesTable.reloadData()
+  }
+  
+  func getData(user: User) -> [updatedCourseModel]{
+    let courses = CourseDataService.instance.getCourses()
+    var coursesToReturn: [updatedCourseModel] = []
+    for course in courses {
+      if course.creator.name == user.name{
+        coursesToReturn.append(course)
+      }
+    }
+    return coursesToReturn
+  }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == segueIds.creatorToCourse {

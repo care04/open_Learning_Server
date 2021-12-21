@@ -132,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="3252" y="-600"/>
         </scene>
-        <!--OLS-->
+        <!--Title-->
         <scene sceneID="wOe-68-YEV">
             <objects>
                 <viewController id="Pxa-Cm-tjA" customClass="CoursePage" customModule="Open_Learning_Server_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -213,10 +213,18 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="dZB-yv-eFp"/>
-                    <navigationItem key="navigationItem" title="OLS" id="ZvR-LX-zLf">
-                        <barButtonItem key="backBarButtonItem" title="Course" id="JaL-yO-DRi"/>
+                    <navigationItem key="navigationItem" title="Title" id="g7R-g0-0XB">
+                        <barButtonItem key="rightBarButtonItem" title="EDIT" style="plain" id="itM-aA-8aH">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zKd-Kt-u9c">
+                                <rect key="frame" x="276" y="5" width="83" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="Edit" destination="zKd-Kt-u9c" id="150-Cf-x1n"/>
                         <outlet property="courseDescription" destination="6gr-tk-cVn" id="LeP-nF-qD0"/>
                         <outlet property="lessonTable" destination="3B0-MQ-y3p" id="DSz-t7-PlL"/>
                         <outlet property="name" destination="Bdo-2m-ZEu" id="sh0-Y2-Qxg"/>
@@ -291,8 +299,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="OLS" id="czJ-VX-70i">
                         <barButtonItem key="backBarButtonItem" title="Unit" id="O1J-BF-gMS"/>
+                        <barButtonItem key="rightBarButtonItem" title="EDIT" style="plain" id="7wf-RQ-agc">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8y6-o7-p6I">
+                                <rect key="frame" x="276" y="5" width="83" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="UnitEditButton" destination="8y6-o7-p6I" id="ffy-wC-Qdn"/>
                         <outlet property="lessonTable" destination="yFV-Xq-gT1" id="PRP-zO-xsS"/>
                         <outlet property="unitName" destination="jAb-Jt-Lfj" id="u5v-5N-VOJ"/>
                         <segue destination="gBb-H3-tr1" kind="show" identifier="UnitToLesson" id="Qum-Ku-evK"/>
@@ -337,9 +354,19 @@
                             <constraint firstItem="4Yh-Mj-oqN" firstAttribute="leading" secondItem="GAt-E6-Eov" secondAttribute="leading" constant="5" id="v1f-5I-UQO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="OLS" id="wtc-Il-s5l"/>
+                    <navigationItem key="navigationItem" title="OLS" id="wtc-Il-s5l">
+                        <barButtonItem key="rightBarButtonItem" title="EDIT" style="plain" id="suY-nd-BmP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="3fP-XS-uQ3">
+                                <rect key="frame" x="276" y="5" width="83" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="lessonContent" destination="4Yh-Mj-oqN" id="U7R-gW-aYj"/>
+                        <outlet property="lessonEditButton" destination="3fP-XS-uQ3" id="WV3-Iz-Iep"/>
                         <outlet property="lessonName" destination="ZDR-I5-3GM" id="7eX-DR-Qav"/>
                     </connections>
                 </viewController>
@@ -437,7 +464,7 @@
             </objects>
             <point key="canvasLocation" x="3252" y="90"/>
         </scene>
-        <!--OLS-->
+        <!--Title-->
         <scene sceneID="EfV-tH-qbd">
             <objects>
                 <viewController id="cNV-XK-ClX" customClass="OwnedCreatedCourses" customModule="Open_Learning_Server_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -519,7 +546,13 @@
                             <constraint firstItem="kIV-4Q-vWQ" firstAttribute="trailing" secondItem="HAr-8c-UiP" secondAttribute="trailing" id="kpj-ZF-k3D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="OLS" id="OCq-ss-WFr"/>
+                    <navigationItem key="navigationItem" title="Title" id="6K1-SS-zvR">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="cjL-gC-Wyp">
+                            <connections>
+                                <segue destination="IbY-cd-PUB" kind="show" id="PF0-b8-UJv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="createdCoursesTable" destination="kIV-4Q-vWQ" id="THl-ae-4WU"/>
                         <segue destination="Pxa-Cm-tjA" kind="show" identifier="creatorToCourse" id="Ge6-7b-7va"/>
@@ -528,6 +561,134 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JjA-fH-Yb9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3982" y="83"/>
+        </scene>
+        <!--New Course-->
+        <scene sceneID="baC-Px-cja">
+            <objects>
+                <viewController id="IbY-cd-PUB" customClass="CreationPage" customModule="Open_Learning_Server_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YXF-b2-PIc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6k-1b-Ctt">
+                                <rect key="frame" x="129" y="65" width="117" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdq-A0-RkY">
+                                <rect key="frame" x="5" y="96.5" width="365" height="87"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLM-LO-u7x">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="bAh-QY-3Vf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pfY-tb-e0g">
+                                        <rect key="frame" x="0.0" y="47" width="360" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="gwN-Yo-GYK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pfY-tb-e0g" secondAttribute="trailing" constant="5" id="uwN-v6-ter"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="fhQ-qd-UtR">
+                                <rect key="frame" x="5" y="198.5" width="365" height="87"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOT-uV-8Ge">
+                                        <rect key="frame" x="0.0" y="0.0" width="87.5" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ddn-Dg-GLs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPW-go-sGV">
+                                        <rect key="frame" x="0.0" y="47" width="360" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="T6M-y7-DFz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kPW-go-sGV" secondAttribute="trailing" constant="5" id="ZLd-zP-iNQ"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="OlF-bd-fsd">
+                                <rect key="frame" x="5" y="300.5" width="365" height="87"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BM-Nb-dVb">
+                                        <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="HwG-fm-RPU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cbb-A2-72Y">
+                                        <rect key="frame" x="0.0" y="47" width="360" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Zrd-49-6Z5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES" smartDashesType="no"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cbb-A2-72Y" secondAttribute="trailing" constant="5" id="OIu-9P-acS"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qub-3x-NKQ">
+                                <rect key="frame" x="135" y="397.5" width="105" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save Course"/>
+                                <connections>
+                                    <action selector="SaveCourse:" destination="IbY-cd-PUB" eventType="touchUpInside" id="grm-Xh-rMc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sm2-ft-cPL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OlF-bd-fsd" firstAttribute="top" secondItem="fhQ-qd-UtR" secondAttribute="bottom" constant="15" id="3Iv-6p-rWN"/>
+                            <constraint firstItem="t6k-1b-Ctt" firstAttribute="top" secondItem="sm2-ft-cPL" secondAttribute="top" constant="21" id="CKe-ER-FDJ"/>
+                            <constraint firstItem="sm2-ft-cPL" firstAttribute="trailing" secondItem="OlF-bd-fsd" secondAttribute="trailing" constant="5" id="HxQ-OR-KMn"/>
+                            <constraint firstItem="OlF-bd-fsd" firstAttribute="leading" secondItem="sm2-ft-cPL" secondAttribute="leading" constant="5" id="Ljf-fO-2yl"/>
+                            <constraint firstItem="fhQ-qd-UtR" firstAttribute="top" secondItem="Vdq-A0-RkY" secondAttribute="bottom" constant="15" id="N0W-Fq-qbJ"/>
+                            <constraint firstItem="qub-3x-NKQ" firstAttribute="centerX" secondItem="YXF-b2-PIc" secondAttribute="centerX" id="PwI-ez-aUz"/>
+                            <constraint firstItem="sm2-ft-cPL" firstAttribute="trailing" secondItem="fhQ-qd-UtR" secondAttribute="trailing" constant="5" id="TAt-ew-dM1"/>
+                            <constraint firstItem="qub-3x-NKQ" firstAttribute="top" secondItem="OlF-bd-fsd" secondAttribute="bottom" constant="10" id="Xtf-Wt-vJd"/>
+                            <constraint firstItem="fhQ-qd-UtR" firstAttribute="leading" secondItem="sm2-ft-cPL" secondAttribute="leading" constant="5" id="boO-tO-10B"/>
+                            <constraint firstItem="sm2-ft-cPL" firstAttribute="trailing" secondItem="Vdq-A0-RkY" secondAttribute="trailing" constant="5" id="dxF-eP-9VJ"/>
+                            <constraint firstItem="Vdq-A0-RkY" firstAttribute="leading" secondItem="sm2-ft-cPL" secondAttribute="leading" constant="5" id="gzB-Pc-24V"/>
+                            <constraint firstItem="t6k-1b-Ctt" firstAttribute="centerX" secondItem="Vdq-A0-RkY" secondAttribute="centerX" id="kMu-Nz-NsH"/>
+                            <constraint firstItem="Vdq-A0-RkY" firstAttribute="top" secondItem="t6k-1b-Ctt" secondAttribute="bottom" constant="5" id="vX5-sn-duy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Course" id="8wG-9V-SOk"/>
+                    <connections>
+                        <outlet property="descriptionField" destination="kPW-go-sGV" id="pEq-K1-XuM"/>
+                        <outlet property="nameField" destination="pfY-tb-e0g" id="4ie-R5-2Dh"/>
+                        <outlet property="priceField" destination="cbb-A2-72Y" id="rc3-Q3-41X"/>
+                        <outlet property="saveCourseButton" destination="qub-3x-NKQ" id="SNQ-AQ-WyK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="omB-oW-mfy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4744.8000000000002" y="89.505247376311857"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="21K-gy-7Hp">

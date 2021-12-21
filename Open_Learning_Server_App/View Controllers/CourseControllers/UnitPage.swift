@@ -11,8 +11,7 @@ class UnitPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   //IBOUtlets
     @IBOutlet weak var lessonTable: UITableView!
-  
-    //IBOutlets
+    @IBOutlet weak var UnitEditButton: UIButton!
     @IBOutlet weak var unitName: UILabel!
   
     var unit = Unit(name: "", lessons: [])
@@ -23,6 +22,11 @@ class UnitPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
       lessonTable.delegate = self
       lessonTable.dataSource = self
         // Do any additional setup after loading the view.
+    }
+  
+    override func viewWillAppear(_ animated: Bool) {
+      let course = CourseDataService.instance.getSelectedCourse()
+      hiddenEditButton(button: UnitEditButton, course: course)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,7 +47,6 @@ class UnitPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         let lesson = unit.lessons![indexPath.row]
         cell.fillLessonCell(lesson: lesson)
-        print(lesson)
         return cell
       } else {
         return UITableViewCell()

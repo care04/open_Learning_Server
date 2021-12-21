@@ -20,7 +20,7 @@ struct updatedCourseModel {
     private(set) public var shortDescription: String
     private(set) public var price: Double
     private(set) public var creator: User
-    private(set) public var units: [Unit]
+    private(set) public var units: [Unit]?
 }
 
 struct Unit {

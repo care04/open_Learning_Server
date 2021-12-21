@@ -26,6 +26,7 @@ class SignInPage: UIViewController, UITextFieldDelegate {
     
     @IBAction func SignInClicked(_ sender: UIButton) {
         if name == "George" && password != "" {
+          UserDataSercice.instance.setUser(user: user)
             performSegue(withIdentifier: "SigninSegue", sender: user)
         }
     }

@@ -14,7 +14,8 @@ class CoursePage: UIViewController {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var courseDescription: UILabel!
     @IBOutlet weak var lessonTable: UITableView!
-    
+    @IBOutlet weak var Edit: UIButton!
+  
     var course = updatedCourseModel(id: 0, name: "", shortDescription: "", price: 0, creator: User(name: "", password: ""), units: [Unit(name: "")])
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +25,9 @@ class CoursePage: UIViewController {
         price.text = "Price: " + "$" + String(course.price) + "0"
         courseDescription.text = "Description: " + course.shortDescription
     }
-    override func viewDidAppear(_ animated: Bool) {
-    }
+  override func viewWillAppear(_ animated: Bool) {
+    hiddenEditButton(button: Edit, course: course)
+  }
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == segueIds.courseToUnit {
       guard let unitController = segue.destination as? UnitPage else { return }
@@ -36,20 +38,20 @@ class CoursePage: UIViewController {
 }
 extension CoursePage: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return course.units.count
+      return course.units?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellVariables.UnitCell, for: indexPath) as? UnitCell else {
             return UITableViewCell()
         }
-        let unit = course.units[indexPath.row]
+      guard let unit = course.units?[indexPath.row] else { return UITableViewCell() }
         cell.fillUnitCell(unit: unit)
         return cell
     }
     
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let unit = course.units[indexPath.row]
+    let unit = course.units?[indexPath.row]
     performSegue(withIdentifier: segueIds.courseToUnit, sender: unit)
   }
 }

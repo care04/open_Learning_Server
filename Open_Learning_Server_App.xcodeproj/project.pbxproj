@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA04E72C27723347001E3384 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04E72B27723347001E3384 /* functions.swift */; };
 		FA0A6EDD26DFF5A700B9EFB0 /* OwnedCreatedCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A6EDC26DFF5A700B9EFB0 /* OwnedCreatedCourses.swift */; };
+		FA23B115277109EC00BCF263 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA23B114277109EC00BCF263 /* UserService.swift */; };
 		FA6FC7A6276B90F50054B9AD /* UnitPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC7A5276B90F50054B9AD /* UnitPage.swift */; };
 		FA6FC7A9276B91A20054B9AD /* SignInPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC7A8276B91A20054B9AD /* SignInPage.swift */; };
 		FA6FC7AB276BACE40054B9AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC7AA276BACE30054B9AD /* User.swift */; };
@@ -27,6 +29,7 @@
 		FAC1C0AC26DFCC3E004CC775 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1C0AB26DFCC3E004CC775 /* Enums.swift */; };
 		FAF8473F276CE809006035E8 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8473E276CE809006035E8 /* LessonCell.swift */; };
 		FAF84741276CEFB6006035E8 /* LessonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF84740276CEFB6006035E8 /* LessonPage.swift */; };
+		FAF9E6842770E8C100BC842F /* CreationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF9E6832770E8C100BC842F /* CreationPage.swift */; };
 		FAFD33FA276BC0BD00B56E8E /* CourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD33F9276BC0BD00B56E8E /* CourseService.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA04E72B27723347001E3384 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 		FA0A6EDC26DFF5A700B9EFB0 /* OwnedCreatedCourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedCreatedCourses.swift; sourceTree = "<group>"; };
+		FA23B114277109EC00BCF263 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		FA6FC7A5276B90F50054B9AD /* UnitPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPage.swift; sourceTree = "<group>"; };
 		FA6FC7A8276B91A20054B9AD /* SignInPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPage.swift; sourceTree = "<group>"; };
 		FA6FC7AA276BACE30054B9AD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -74,6 +79,7 @@
 		FAC1C0AB26DFCC3E004CC775 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		FAF8473E276CE809006035E8 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
 		FAF84740276CEFB6006035E8 /* LessonPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPage.swift; sourceTree = "<group>"; };
+		FAF9E6832770E8C100BC842F /* CreationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationPage.swift; sourceTree = "<group>"; };
 		FAFD33F9276BC0BD00B56E8E /* CourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +115,7 @@
 				FAC1C0A726DFC6F0004CC775 /* CoursePage.swift */,
 				FA6FC7A5276B90F50054B9AD /* UnitPage.swift */,
 				FAF84740276CEFB6006035E8 /* LessonPage.swift */,
+				FAF9E6832770E8C100BC842F /* CreationPage.swift */,
 			);
 			path = CourseControllers;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 				FAC1C0A026DFB93D004CC775 /* Course.swift */,
 				FAC1C0AB26DFCC3E004CC775 /* Enums.swift */,
 				FA6FC7AA276BACE30054B9AD /* User.swift */,
+				FA04E72B27723347001E3384 /* functions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				FAFD33F9276BC0BD00B56E8E /* CourseService.swift */,
+				FA23B114277109EC00BCF263 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -347,12 +356,14 @@
 			files = (
 				FA6FC7AB276BACE40054B9AD /* User.swift in Sources */,
 				FAC1C0A626DFBAAF004CC775 /* CourseCell.swift in Sources */,
+				FA23B115277109EC00BCF263 /* UserService.swift in Sources */,
 				FAFD33FA276BC0BD00B56E8E /* CourseService.swift in Sources */,
 				FAA1F96F26DE8C420049340B /* HomePage.swift in Sources */,
 				FAC1C09E26DFB674004CC775 /* CourseListing.swift in Sources */,
 				FA0A6EDD26DFF5A700B9EFB0 /* OwnedCreatedCourses.swift in Sources */,
 				FAC1C0A126DFB93D004CC775 /* Course.swift in Sources */,
 				FA6FC7A6276B90F50054B9AD /* UnitPage.swift in Sources */,
+				FA04E72C27723347001E3384 /* functions.swift in Sources */,
 				FAC1C0A826DFC6F0004CC775 /* CoursePage.swift in Sources */,
 				FAA1F96B26DE8C420049340B /* AppDelegate.swift in Sources */,
 				FA6FC7A9276B91A20054B9AD /* SignInPage.swift in Sources */,
@@ -361,6 +372,7 @@
 				FAC1C0AC26DFCC3E004CC775 /* Enums.swift in Sources */,
 				FAF8473F276CE809006035E8 /* LessonCell.swift in Sources */,
 				FAC1C0AA26DFC8D3004CC775 /* UnitCell.swift in Sources */,
+				FAF9E6842770E8C100BC842F /* CreationPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

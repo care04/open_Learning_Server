@@ -10,6 +10,7 @@ import UIKit
 class LessonPage: UIViewController {
   @IBOutlet weak var lessonName: UILabel!
   @IBOutlet weak var lessonContent: UILabel!
+  @IBOutlet weak var lessonEditButton: UIButton!
   
   var lesson = Lesson(name: "", content: "")
 
@@ -20,7 +21,10 @@ class LessonPage: UIViewController {
       // Do any additional setup after loading the view.
   }
     
-
+  override func viewWillAppear(_ animated: Bool) {
+    let course = CourseDataService.instance.getSelectedCourse()
+    hiddenEditButton(button: lessonEditButton, course: course)
+  }
     /*
     // MARK: - Navigation
 
