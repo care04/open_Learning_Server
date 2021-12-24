@@ -13,6 +13,7 @@ class EditMainCoursePage: UIViewController {
   @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var descriptionTextView: UITextView!
   @IBOutlet weak var priceField: UITextField!
+  @IBOutlet weak var unitTable: UITableView!
   var course: updatedCourseModel!
   var price: Double = 0
   var name = ""
@@ -23,6 +24,8 @@ class EditMainCoursePage: UIViewController {
     descriptionTextView.text = shortDescription
     priceField.text = String(price)
     naviationBar.hidesBackButton = true
+    unitTable.delegate = self
+    unitTable.dataSource = self
   }
     
   @IBAction func priceEditid(_ sender: UITextField) {
@@ -44,14 +47,32 @@ class EditMainCoursePage: UIViewController {
     CourseDataService.instance.updateCourse(course: updatedCourse)
     navigationController?.popViewController(animated: true)
   }
-  /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+  @IBAction func addUnitClicked(_ sender: UIButton) {
+    print("add a unit")
+  }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == segueIds.fromEditCourseToUnit {
+      guard let controller = segue.destination as? UnitPage else { return }
+      controller.unit = sender as! Unit
     }
-    */
-
+  }
+}
+extension EditMainCoursePage: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    course.units?.count ?? 0
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "unitEditName", for: indexPath) as? UnitCell else {
+      return UITableViewCell()
+    }
+    guard let unit = course.units?[indexPath.row] else { return UITableViewCell() }
+    cell.fillUnitCell(unit: unit)
+    return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let unit = CourseDataService.instance.getSelectedCourse().units?[indexPath.row] else { return }
+    performSegue(withIdentifier: segueIds.fromEditCourseToUnit, sender: unit)
+  }
 }
