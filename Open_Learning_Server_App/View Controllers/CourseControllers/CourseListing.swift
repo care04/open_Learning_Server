@@ -23,10 +23,10 @@ class CourseListing: UIViewController {
   }
     
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == segueIds.coursesToCourse {
-      guard let courseController = segue.destination as? CoursePage else { return }
-      courseController.course = (sender as? updatedCourseModel)!
-    }
+//    if segue.identifier == segueIds.coursesToCourse {
+//      guard let courseController = segue.destination as? CoursePage else { return }
+//      courseController.course = ((sender as? updatedCourseModel)!)
+//    }
   }
 }
 extension CourseListing: UITableViewDelegate, UITableViewDataSource {
@@ -45,6 +45,6 @@ extension CourseListing: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let course = courses[indexPath.row]
     CourseDataService.instance.setSelectedCourse(course: course)
-    performSegue(withIdentifier: segueIds.coursesToCourse, sender: course)
+    performSegue(withIdentifier: segueIds.coursesToCourse, sender: nil)
   }
 }

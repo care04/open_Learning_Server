@@ -21,6 +21,7 @@
 		FAA1F97726DE8C440049340B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA1F97526DE8C440049340B /* LaunchScreen.storyboard */; };
 		FAA1F98226DE8C450049340B /* Open_Learning_Server_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1F98126DE8C450049340B /* Open_Learning_Server_AppTests.swift */; };
 		FAA1F98D26DE8C450049340B /* Open_Learning_Server_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1F98C26DE8C450049340B /* Open_Learning_Server_AppUITests.swift */; };
+		FAB7AB052774D04F005A8CBA /* EditMainCoursePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7AB042774D04F005A8CBA /* EditMainCoursePage.swift */; };
 		FAC1C09E26DFB674004CC775 /* CourseListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1C09D26DFB674004CC775 /* CourseListing.swift */; };
 		FAC1C0A126DFB93D004CC775 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1C0A026DFB93D004CC775 /* Course.swift */; };
 		FAC1C0A626DFBAAF004CC775 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1C0A526DFBAAF004CC775 /* CourseCell.swift */; };
@@ -71,6 +72,7 @@
 		FAA1F98826DE8C450049340B /* Open_Learning_Server_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Open_Learning_Server_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA1F98C26DE8C450049340B /* Open_Learning_Server_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open_Learning_Server_AppUITests.swift; sourceTree = "<group>"; };
 		FAA1F98E26DE8C450049340B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB7AB042774D04F005A8CBA /* EditMainCoursePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMainCoursePage.swift; sourceTree = "<group>"; };
 		FAC1C09D26DFB674004CC775 /* CourseListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListing.swift; sourceTree = "<group>"; };
 		FAC1C0A026DFB93D004CC775 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		FAC1C0A526DFBAAF004CC775 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		FA6FC7A4276B90280054B9AD /* CourseControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAB7AB032774D005005A8CBA /* Editing */,
 				FAC1C09D26DFB674004CC775 /* CourseListing.swift */,
 				FAC1C0A726DFC6F0004CC775 /* CoursePage.swift */,
 				FA6FC7A5276B90F50054B9AD /* UnitPage.swift */,
@@ -182,6 +185,14 @@
 				FAA1F98E26DE8C450049340B /* Info.plist */,
 			);
 			path = Open_Learning_Server_AppUITests;
+			sourceTree = "<group>";
+		};
+		FAB7AB032774D005005A8CBA /* Editing */ = {
+			isa = PBXGroup;
+			children = (
+				FAB7AB042774D04F005A8CBA /* EditMainCoursePage.swift */,
+			);
+			path = Editing;
 			sourceTree = "<group>";
 		};
 		FAC1C09C26DFB650004CC775 /* View Controllers */ = {
@@ -366,6 +377,7 @@
 				FA04E72C27723347001E3384 /* functions.swift in Sources */,
 				FAC1C0A826DFC6F0004CC775 /* CoursePage.swift in Sources */,
 				FAA1F96B26DE8C420049340B /* AppDelegate.swift in Sources */,
+				FAB7AB052774D04F005A8CBA /* EditMainCoursePage.swift in Sources */,
 				FA6FC7A9276B91A20054B9AD /* SignInPage.swift in Sources */,
 				FAA1F96D26DE8C420049340B /* SceneDelegate.swift in Sources */,
 				FAF84741276CEFB6006035E8 /* LessonPage.swift in Sources */,

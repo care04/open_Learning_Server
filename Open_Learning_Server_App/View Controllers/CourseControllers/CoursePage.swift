@@ -14,27 +14,41 @@ class CoursePage: UIViewController {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var courseDescription: UILabel!
     @IBOutlet weak var lessonTable: UITableView!
-    @IBOutlet weak var Edit: UIButton!
+  @IBOutlet weak var navi: UINavigationItem!
+  @IBOutlet weak var Edit: UIButton!
   
     var course = updatedCourseModel(id: 0, name: "", shortDescription: "", price: 0, creator: User(name: "", password: ""), units: [Unit(name: "")])
     override func viewDidLoad() {
         super.viewDidLoad()
-        lessonTable.delegate = self
-        lessonTable.dataSource = self
         name.text = "Name: " + course.name
         price.text = "Price: " + "$" + String(course.price) + "0"
         courseDescription.text = "Description: " + course.shortDescription
+        lessonTable.delegate = self
+        lessonTable.dataSource = self
     }
   override func viewWillAppear(_ animated: Bool) {
-    hiddenEditButton(button: Edit, course: course)
+    let a = CourseDataService.instance.getSelectedCourse()
+    course = a
+    hiddenEditButton(button: Edit, course: a)
+    viewDidLoad()
   }
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == segueIds.courseToUnit {
       guard let unitController = segue.destination as? UnitPage else { return }
       unitController.unit = (sender as? Unit)!
     }
+    if segue.identifier == segueIds.EditMainCourse {
+      guard let mainEdit = segue.destination as? EditMainCoursePage else { return }
+      mainEdit.name = course.name
+      mainEdit.price = course.price
+      mainEdit.shortDescription = course.shortDescription
+      mainEdit.course = course
+    }
   }
     
+  @IBAction func EditClicked(_ sender: UIButton) {
+    performSegue(withIdentifier: "EditMainCourse", sender: nil)
+  }
 }
 extension CoursePage: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

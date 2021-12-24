@@ -12,9 +12,11 @@ class OwnedCreatedCourses: UIViewController {
     var user: User = User(name: "George", password: "")
     
     var UsersCourses: [updatedCourseModel] = []
-    @IBOutlet weak var createdCoursesTable: UITableView!
+  @IBOutlet weak var navi: UINavigationItem!
+  @IBOutlet weak var createdCoursesTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+      navi.hidesBackButton = true
         UsersCourses.append(contentsOf: UserDataSercice.instance.getUsersCourses())
         createdCoursesTable.reloadData()
         createdCoursesTable.delegate = self
@@ -39,10 +41,10 @@ class OwnedCreatedCourses: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == segueIds.creatorToCourse {
-      guard let coursePage = segue.destination as? CoursePage else { return }
-      coursePage.course = (sender as? updatedCourseModel)!
-    }
+//    if segue.identifier == segueIds.creatorToCourse {
+//      guard let coursePage = segue.destination as? CoursePage else { return }
+//      coursePage.course = (sender as? updatedCourseModel)!
+//    }
   }
 }
 extension OwnedCreatedCourses: UITableViewDelegate, UITableViewDataSource {
@@ -58,6 +60,7 @@ extension OwnedCreatedCourses: UITableViewDelegate, UITableViewDataSource {
   
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       let course = UsersCourses[indexPath.row]
-      performSegue(withIdentifier: segueIds.creatorToCourse, sender: course)
+      CourseDataService.instance.setSelectedCourse(course: course)
+      performSegue(withIdentifier: segueIds.creatorToCourse, sender: nil)
     }
 }

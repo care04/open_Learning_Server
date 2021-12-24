@@ -43,4 +43,13 @@ class CourseDataService {
   func addCourse(course: updatedCourseModel) {
     courses.append(course)
   }
+  func updateCourse(course: updatedCourseModel) {
+    var index = -1
+    for item in courses {
+      index += 1
+      if item.id == course.id {
+        courses[index] = course
+      }
+    }
+  }
 }
