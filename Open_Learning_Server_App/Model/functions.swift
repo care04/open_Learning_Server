@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-func hiddenEditButton(button: UIButton, course: updatedCourseModel) {
+func hiddenEditButton(button: UIButton, course: Course) {
   let userName = UserDataSercice.instance.getUser().name
   if userName == "" || course.creator.name != userName {
     button.isEnabled = false

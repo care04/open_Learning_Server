@@ -25,7 +25,7 @@ class CreationPage: UIViewController {
       let name = nameField.text
       let user = UserDataSercice.instance.getUser()
       let description = descriptionField.text
-      let course = updatedCourseModel(id: 0, name: name!, shortDescription: description!, price: price, creator: user)
+      let course = Course(id: 0, name: name!, shortDescription: description!, price: price, creator: user)
       CourseDataService.instance.addCourse(course: course)
       navigationController?.popViewController(animated: true)
     }

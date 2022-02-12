@@ -8,13 +8,6 @@
 import Foundation
 
 struct Course {
-    private(set) public var name: String
-    private(set) public var shortDescription: String
-    private(set) public var price: Double
-    private(set) public var unit: [Unit]
-}
-
-struct updatedCourseModel {
     private(set) public var id: Double
     private(set) public var name: String
     private(set) public var shortDescription: String

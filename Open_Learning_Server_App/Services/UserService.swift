@@ -16,8 +16,8 @@ class UserDataSercice {
   func getUser() -> User {
     return self.user
   }
-  func getUsersCourses() -> [updatedCourseModel] {
-    var usersCourses: [updatedCourseModel] = []
+  func getUsersCourses() -> [Course] {
+    var usersCourses: [Course] = []
     let courses = CourseDataService.instance.getCourses()
     for course in courses {
       if course.creator.name == self.user.name {

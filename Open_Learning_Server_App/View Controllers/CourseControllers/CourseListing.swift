@@ -12,7 +12,7 @@ class CourseListing: UIViewController {
   //MARK: Iboutlets
   @IBOutlet weak var courseListsTable: UITableView!
     
-  var courses: [updatedCourseModel]!
+  var courses: [Course]!
   override func viewDidLoad() {
     super.viewDidLoad()
     courseListsTable.delegate = self

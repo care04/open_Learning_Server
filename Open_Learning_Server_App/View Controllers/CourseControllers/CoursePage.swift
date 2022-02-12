@@ -17,7 +17,7 @@ class CoursePage: UIViewController {
   @IBOutlet weak var navi: UINavigationItem!
   @IBOutlet weak var Edit: UIButton!
   
-    var course = updatedCourseModel(id: 0, name: "", shortDescription: "", price: 0, creator: User(name: "", password: ""), units: [Unit(name: "")])
+    var course = Course(id: 0, name: "", shortDescription: "", price: 0, creator: User(name: "", password: ""), units: [Unit(name: "")])
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = "Name: " + course.name
@@ -30,6 +30,7 @@ class CoursePage: UIViewController {
     let a = CourseDataService.instance.getSelectedCourse()
     course = a
     hiddenEditButton(button: Edit, course: a)
+    lessonTable.reloadData()
     viewDidLoad()
   }
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

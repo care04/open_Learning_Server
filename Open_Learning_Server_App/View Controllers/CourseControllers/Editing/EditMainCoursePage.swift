@@ -14,7 +14,7 @@ class EditMainCoursePage: UIViewController {
   @IBOutlet weak var descriptionTextView: UITextView!
   @IBOutlet weak var priceField: UITextField!
   @IBOutlet weak var unitTable: UITableView!
-  var course: updatedCourseModel!
+  var course: Course!
   var price: Double = 0
   var name = ""
   var shortDescription = ""
@@ -26,6 +26,15 @@ class EditMainCoursePage: UIViewController {
     naviationBar.hidesBackButton = true
     unitTable.delegate = self
     unitTable.dataSource = self
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    let selected = CourseDataService.instance.getSelectedCourse()
+    course = selected
+    price = selected.price
+    name = selected.name
+    shortDescription = selected.shortDescription
+    unitTable.reloadData()
   }
     
   @IBAction func priceEditid(_ sender: UITextField) {
@@ -42,13 +51,10 @@ class EditMainCoursePage: UIViewController {
   @IBAction func saveClicked(_ sender: UIButton) {
     let anem = nameField.text ?? name
     let short = descriptionTextView.text ?? shortDescription
-    let updatedCourse = updatedCourseModel(id: course.id, name: anem, shortDescription: short, price: price, creator: course.creator, units: course.units)
+    let updatedCourse = Course(id: course.id, name: anem, shortDescription: short, price: price, creator: course.creator, units: course.units)
     CourseDataService.instance.setSelectedCourse(course: updatedCourse)
     CourseDataService.instance.updateCourse(course: updatedCourse)
     navigationController?.popViewController(animated: true)
-  }
-  @IBAction func addUnitClicked(_ sender: UIButton) {
-    print("add a unit")
   }
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == segueIds.fromEditCourseToUnit {

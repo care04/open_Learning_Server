@@ -11,7 +11,7 @@ class OwnedCreatedCourses: UIViewController {
 
     var user: User = User(name: "George", password: "")
     
-    var UsersCourses: [updatedCourseModel] = []
+    var UsersCourses: [Course] = []
   @IBOutlet weak var navi: UINavigationItem!
   @IBOutlet weak var createdCoursesTable: UITableView!
     override func viewDidLoad() {
@@ -29,9 +29,9 @@ class OwnedCreatedCourses: UIViewController {
     createdCoursesTable.reloadData()
   }
   
-  func getData(user: User) -> [updatedCourseModel]{
+  func getData(user: User) -> [Course]{
     let courses = CourseDataService.instance.getCourses()
-    var coursesToReturn: [updatedCourseModel] = []
+    var coursesToReturn: [Course] = []
     for course in courses {
       if course.creator.name == user.name{
         coursesToReturn.append(course)

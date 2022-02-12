@@ -18,7 +18,7 @@ class CourseCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func fillCell(course: updatedCourseModel) {
+    func fillCell(course: Course) {
         name.text = "Name: " + course.name
         price.text = "$" + String(course.price) + "0"
         shortDescription.text = "Description: " + course.shortDescription

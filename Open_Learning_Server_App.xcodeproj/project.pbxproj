@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA02D70227764FDD00C83D79 /* UnitCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02D70127764FDD00C83D79 /* UnitCreation.swift */; };
 		FA04E72C27723347001E3384 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04E72B27723347001E3384 /* functions.swift */; };
 		FA0A6EDD26DFF5A700B9EFB0 /* OwnedCreatedCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A6EDC26DFF5A700B9EFB0 /* OwnedCreatedCourses.swift */; };
 		FA23B115277109EC00BCF263 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA23B114277109EC00BCF263 /* UserService.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA02D70127764FDD00C83D79 /* UnitCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCreation.swift; sourceTree = "<group>"; };
 		FA04E72B27723347001E3384 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 		FA0A6EDC26DFF5A700B9EFB0 /* OwnedCreatedCourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedCreatedCourses.swift; sourceTree = "<group>"; };
 		FA23B114277109EC00BCF263 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -110,15 +112,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA02D70027764FBB00C83D79 /* adding */ = {
+			isa = PBXGroup;
+			children = (
+				FAF9E6832770E8C100BC842F /* CreationPage.swift */,
+				FA02D70127764FDD00C83D79 /* UnitCreation.swift */,
+			);
+			path = adding;
+			sourceTree = "<group>";
+		};
 		FA6FC7A4276B90280054B9AD /* CourseControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA02D70027764FBB00C83D79 /* adding */,
 				FAB7AB032774D005005A8CBA /* Editing */,
 				FAC1C09D26DFB674004CC775 /* CourseListing.swift */,
 				FAC1C0A726DFC6F0004CC775 /* CoursePage.swift */,
 				FA6FC7A5276B90F50054B9AD /* UnitPage.swift */,
 				FAF84740276CEFB6006035E8 /* LessonPage.swift */,
-				FAF9E6832770E8C100BC842F /* CreationPage.swift */,
 			);
 			path = CourseControllers;
 			sourceTree = "<group>";
@@ -378,6 +389,7 @@
 				FAC1C0A826DFC6F0004CC775 /* CoursePage.swift in Sources */,
 				FAA1F96B26DE8C420049340B /* AppDelegate.swift in Sources */,
 				FAB7AB052774D04F005A8CBA /* EditMainCoursePage.swift in Sources */,
+				FA02D70227764FDD00C83D79 /* UnitCreation.swift in Sources */,
 				FA6FC7A9276B91A20054B9AD /* SignInPage.swift in Sources */,
 				FAA1F96D26DE8C420049340B /* SceneDelegate.swift in Sources */,
 				FAF84741276CEFB6006035E8 /* LessonPage.swift in Sources */,
