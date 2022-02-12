@@ -28,12 +28,20 @@ class UnitPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
       let course = CourseDataService.instance.getSelectedCourse()
       hiddenEditButton(button: UnitEditButton, course: course)
     }
+  
+    @IBAction func EditUnit(_ sender: UIButton) {
+      performSegue(withIdentifier: segueIds.EditUnit, sender: unit)
+    }
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIds.UnitToLesson{
         guard let lessonPage = segue.destination as? LessonPage else { return }
         lessonPage.lesson = (sender as? Lesson)!
-      }
+        } else if segue.identifier == segueIds.EditUnit {
+          guard let editUnit = segue.destination as? EditUnitPage else { return }
+          editUnit.unit = (sender as? Unit)!
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

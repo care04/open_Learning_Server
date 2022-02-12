@@ -13,6 +13,7 @@ enum cellVariables {
     static let UnitCell = "UnitCell"
     static let SigninSegue = "SigninSegue"
     static let usersCourses = "usersCourses"
+    static let editUnitLessonCell = "editUnitLessonCell"
 }
 
 enum segueIds {
@@ -23,4 +24,5 @@ enum segueIds {
   static let creatorToCourse = "creatorToCourse"
   static let EditMainCourse = "EditMainCourse"
   static let fromEditCourseToUnit = "fromEditCourseToUnit"
+  static let EditUnit = "EditUnit"
 }
