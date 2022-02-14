@@ -308,14 +308,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="unitEditName" id="lxa-dW-87M" customClass="UnitCell" customModule="Open_Learning_Server_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="280" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="280" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lxa-dW-87M" id="cUX-2S-pCx">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxx-xh-czJ">
-                                                    <rect key="frame" x="16" y="11" width="248" height="21.5"/>
+                                                    <rect key="frame" x="16" y="11" width="248" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -429,14 +429,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="editUnitLessonCell" id="QaI-nd-799" customClass="LessonCell" customModule="Open_Learning_Server_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="280" height="43"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="280" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QaI-nd-799" id="kw9-XR-S0L">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23V-5e-cvq">
-                                                    <rect key="frame" x="16" y="11" width="248" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="248" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1136,6 +1136,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="LessonNameAdded:" destination="e6c-99-IHr" eventType="editingChanged" id="Mw1-z7-uyN"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDe-N6-rac">
                                         <rect key="frame" x="0.0" y="104" width="61" height="30"/>
@@ -1152,7 +1155,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="dee-XB-tFJ"/>
                                         </constraints>
-                                        <color key="textColor" red="0.78041154150000003" green="0.78038030859999996" blue="0.78854078049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -1174,8 +1177,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="phm-lb-DhS">
-                        <barButtonItem key="rightBarButtonItem" title="ADD" id="YtE-Dy-Scq"/>
+                        <barButtonItem key="rightBarButtonItem" title="ADD" id="YtE-Dy-Scq">
+                            <connections>
+                                <action selector="AddClicked:" destination="e6c-99-IHr" id="FIO-Cu-Z6T"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lessonContentTextView" destination="Sdt-nw-BZW" id="WQ5-lc-5zf"/>
+                        <outlet property="lessonNameTextField" destination="0Vy-W5-rMt" id="Jej-lL-j6f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pe6-cv-ljY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
