@@ -26,6 +26,9 @@ class UnitPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     override func viewWillAppear(_ animated: Bool) {
       let course = CourseDataService.instance.getSelectedCourse()
+      for units in course.units! {
+        print(units.name)
+      }
       hiddenEditButton(button: UnitEditButton, course: course)
     }
   

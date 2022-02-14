@@ -19,8 +19,43 @@ class EditUnitPage: UIViewController, UITableViewDelegate, UITableViewDataSource
       unitLessonTable.delegate = self
       unitLessonTable.dataSource = self
     }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    if CourseDataService.instance.getSelectedCourse().units?.count ?? 0 > 0 {
+      for cunit in CourseDataService.instance.getSelectedCourse().units! {
+        if cunit.name == unit.name {
+          unit = cunit
+          unitLessonTable.reloadData()
+          break
+        }
+      }
+    }
+  }
     
   @IBAction func saveChangesButton(_ sender: UIButton) {
+    let selectedCourse = CourseDataService.instance.getSelectedCourse()
+    if unitName.text != unit.name {
+      var lessons: [Lesson] = []
+      var updatedUnits: [Unit] = []
+      for units in selectedCourse.units! {
+        if units.name == unit.name {
+          if units.lessons?.count ?? 0 > 0 {
+            lessons = units.lessons!
+          }
+        }
+      }
+      for units in selectedCourse.units! {
+        if units.name == unit.name {
+          updatedUnits.append(Unit(name: unitName.text!, lessons: lessons))
+        } else {
+          updatedUnits.append(units)
+        }
+      }
+      let updated = Course(id: selectedCourse.id, name: selectedCourse.name, shortDescription: selectedCourse.shortDescription, price: selectedCourse.price, creator: selectedCourse.creator, units: updatedUnits)
+      CourseDataService.instance.updateCourse(course: updated)
+      CourseDataService.instance.setSelectedCourse(course: updated)
+      navigationController?.popViewController(animated: true)
+    }
   }
   
   @IBAction func AddALessonButton(_ sender: Any) {

@@ -23,12 +23,34 @@ class LessonCreation: UIViewController, UITextViewDelegate {
   }
   
   @IBAction func AddClicked(_ sender: UIBarButtonItem) {
-    
+    if name != "" && content != "" {
+      let lesson = Lesson(name: name, content: content)
+      var lessons = unit.lessons
+      if lessons?.count ?? 0 > 0 {
+        lessons!.append(lesson)
+      }
+      let newUnit = Unit(name: unit.name, lessons: lessons)
+      let course = CourseDataService.instance.getSelectedCourse()
+      var updatedUnits: [Unit] = []
+      if course.units?.count ?? 0 > 0 {
+        for cunit in course.units! {
+          if cunit.name == unit.name {
+            updatedUnits.append(newUnit)
+          } else {
+            updatedUnits.append(cunit)
+          }
+        }
+      }
+      let updatedCourse = Course(id: course.id, name: course.name, shortDescription: course.shortDescription, price: course.price, creator: course.creator, units: updatedUnits)
+      CourseDataService.instance.updateCourse(course: updatedCourse)
+      CourseDataService.instance.setSelectedCourse(course: updatedCourse)
+      navigationController?.popViewController(animated: true)
+      
+    }
   }
   
   func textViewDidChange(_ textView: UITextView) {
     content = lessonContentTextView.text ?? ""
-    print("content", content)
   }
   
   func textViewDidBeginEditing(_ textView: UITextView) {
