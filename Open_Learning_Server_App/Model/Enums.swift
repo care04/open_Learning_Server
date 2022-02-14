@@ -25,4 +25,5 @@ enum segueIds {
   static let EditMainCourse = "EditMainCourse"
   static let fromEditCourseToUnit = "fromEditCourseToUnit"
   static let EditUnit = "EditUnit"
+  static let AddALessonSegue = "AddALessonSegue"
 }

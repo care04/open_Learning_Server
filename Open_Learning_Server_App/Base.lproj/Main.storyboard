@@ -429,14 +429,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="editUnitLessonCell" id="QaI-nd-799" customClass="LessonCell" customModule="Open_Learning_Server_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="280" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="280" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QaI-nd-799" id="kw9-XR-S0L">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23V-5e-cvq">
-                                                    <rect key="frame" x="16" y="11" width="248" height="21.5"/>
+                                                    <rect key="frame" x="16" y="11" width="248" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -463,6 +463,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add a Lesson"/>
+                                <connections>
+                                    <action selector="AddALessonButton:" destination="JJ8-XD-USW" eventType="touchUpInside" id="beP-cM-VZ3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tqc-Tx-3Ab"/>
@@ -487,6 +490,7 @@
                     <connections>
                         <outlet property="unitLessonTable" destination="6bG-10-BxO" id="Am5-ze-ghb"/>
                         <outlet property="unitName" destination="xvd-uJ-SFc" id="IyE-0R-ikm"/>
+                        <segue destination="e6c-99-IHr" kind="push" identifier="AddALessonSegue" id="VWb-sg-fni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6na-dc-eE6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1098,22 +1102,22 @@
             </objects>
             <point key="canvasLocation" x="2526" y="90"/>
         </scene>
-        <!--Unit Creation-->
+        <!--Lesson Creation-->
         <scene sceneID="hbg-dc-UUc">
             <objects>
-                <viewController id="e6c-99-IHr" customClass="UnitCreation" customModule="Open_Learning_Server_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e6c-99-IHr" customClass="LessonCreation" customModule="Open_Learning_Server_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UC0-bd-UzA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Lesson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zw-nZ-bin">
-                                <rect key="frame" x="113.5" y="15" width="93" height="20.5"/>
+                                <rect key="frame" x="113.5" y="59" width="93" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="R6J-vk-3wK">
-                                <rect key="frame" x="20" y="45.5" width="280" height="271"/>
+                                <rect key="frame" x="20" y="89.5" width="280" height="271"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOk-RP-FUa">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
@@ -1132,9 +1136,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="unitNameTyped:" destination="e6c-99-IHr" eventType="editingChanged" id="nRa-st-79w"/>
-                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDe-N6-rac">
                                         <rect key="frame" x="0.0" y="104" width="61" height="30"/>
@@ -1173,15 +1174,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="phm-lb-DhS">
-                        <barButtonItem key="rightBarButtonItem" title="ADD" id="YtE-Dy-Scq">
-                            <connections>
-                                <action selector="saveUnitClicked:" destination="e6c-99-IHr" id="6nQ-Tz-WDO"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="ADD" id="YtE-Dy-Scq"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="save" destination="YtE-Dy-Scq" id="Ftg-DT-bAx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pe6-cv-ljY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1189,7 +1183,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YwT-Rb-hPn"/>
+        <segue reference="QDa-c9-bKd"/>
         <segue reference="aJg-Kf-y7q"/>
     </inferredMetricsTieBreakers>
     <resources>

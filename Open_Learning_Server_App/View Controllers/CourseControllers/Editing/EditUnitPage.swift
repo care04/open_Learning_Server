@@ -23,15 +23,16 @@ class EditUnitPage: UIViewController, UITableViewDelegate, UITableViewDataSource
   @IBAction func saveChangesButton(_ sender: UIButton) {
   }
   
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+  @IBAction func AddALessonButton(_ sender: Any) {
+    performSegue(withIdentifier: segueIds.AddALessonSegue, sender: nil)
+  }
+  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+      if segue.identifier == segueIds.AddALessonSegue {
+        guard let LessonCreationController = segue.destination as? LessonCreation else { return }
+        LessonCreationController.unit = unit
+      }
     }
-    */
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return unit.lessons?.count ?? 0
