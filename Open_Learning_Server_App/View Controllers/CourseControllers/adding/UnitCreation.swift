@@ -21,7 +21,11 @@ class UnitCreation: UIViewController {
     let currentCourse = CourseDataService.instance.getSelectedCourse()
     var units = currentCourse.units
     if units?.count ?? 0 > 0 {
-      units!.append(Unit(name: name))
+      if currentCourse.units?.count ?? 0 > 0 {
+        units!.append(Unit(name: name, id: currentCourse.units!.count + 1))
+      } else {
+        units!.append(Unit(name: name, id: 1))
+      }
       let newCourse = Course(id: currentCourse.id, name: currentCourse.name, shortDescription: currentCourse.shortDescription, price: currentCourse.price, creator: currentCourse.creator, units: units)
       CourseDataService.instance.updateCourse(course: newCourse)
       CourseDataService.instance.setSelectedCourse(course: newCourse)

@@ -28,24 +28,12 @@ class LessonCreation: UIViewController, UITextViewDelegate {
       var lessons = unit.lessons
       if lessons?.count ?? 0 > 0 {
         lessons!.append(lesson)
+      } else {
+        lessons = [lesson]
       }
-      let newUnit = Unit(name: unit.name, lessons: lessons)
-      let course = CourseDataService.instance.getSelectedCourse()
-      var updatedUnits: [Unit] = []
-      if course.units?.count ?? 0 > 0 {
-        for cunit in course.units! {
-          if cunit.name == unit.name {
-            updatedUnits.append(newUnit)
-          } else {
-            updatedUnits.append(cunit)
-          }
-        }
-      }
-      let updatedCourse = Course(id: course.id, name: course.name, shortDescription: course.shortDescription, price: course.price, creator: course.creator, units: updatedUnits)
-      CourseDataService.instance.updateCourse(course: updatedCourse)
-      CourseDataService.instance.setSelectedCourse(course: updatedCourse)
+      let newUnit = Unit(name: unit.name, lessons: lessons, id: unit.id)
+      CourseDataService.instance.setSelectedUnit(unit: newUnit)
       navigationController?.popViewController(animated: true)
-      
     }
   }
   

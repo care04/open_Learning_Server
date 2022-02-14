@@ -21,41 +21,25 @@ class EditUnitPage: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
   
   override func viewWillAppear(_ animated: Bool) {
-    if CourseDataService.instance.getSelectedCourse().units?.count ?? 0 > 0 {
-      for cunit in CourseDataService.instance.getSelectedCourse().units! {
-        if cunit.name == unit.name {
-          unit = cunit
-          unitLessonTable.reloadData()
-          break
-        }
-      }
-    }
+    unit = CourseDataService.instance.getSelectedUnit()
+    unitLessonTable.reloadData()
   }
     
   @IBAction func saveChangesButton(_ sender: UIButton) {
-    let selectedCourse = CourseDataService.instance.getSelectedCourse()
-    if unitName.text != unit.name {
-      var lessons: [Lesson] = []
-      var updatedUnits: [Unit] = []
-      for units in selectedCourse.units! {
-        if units.name == unit.name {
-          if units.lessons?.count ?? 0 > 0 {
-            lessons = units.lessons!
-          }
-        }
+    let course = CourseDataService.instance.getSelectedCourse()
+    let unitHere = Unit(name: unitName.text ?? unit.name, lessons: unit.lessons, id: unit.id)
+    CourseDataService.instance.setSelectedUnit(unit: unitHere)
+    var updatedUnits: [Unit] = []
+    for units in CourseDataService.instance.getSelectedCourse().units! {
+      if units.id == unitHere.id {
+        updatedUnits.append(unitHere)
+      } else {
+        updatedUnits.append(units)
       }
-      for units in selectedCourse.units! {
-        if units.name == unit.name {
-          updatedUnits.append(Unit(name: unitName.text!, lessons: lessons))
-        } else {
-          updatedUnits.append(units)
-        }
-      }
-      let updated = Course(id: selectedCourse.id, name: selectedCourse.name, shortDescription: selectedCourse.shortDescription, price: selectedCourse.price, creator: selectedCourse.creator, units: updatedUnits)
-      CourseDataService.instance.updateCourse(course: updated)
-      CourseDataService.instance.setSelectedCourse(course: updated)
-      navigationController?.popViewController(animated: true)
     }
+    let updatedCourse = Course(id: course.id, name: course.name, shortDescription: course.shortDescription, price: course.price, creator: course.creator, units: updatedUnits)
+    CourseDataService.instance.setSelectedCourse(course: updatedCourse)
+    navigationController?.popViewController(animated: true)
   }
   
   @IBAction func AddALessonButton(_ sender: Any) {

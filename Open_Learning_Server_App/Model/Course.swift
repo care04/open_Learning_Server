@@ -17,8 +17,9 @@ struct Course {
 }
 
 struct Unit {
-    private(set) public var name: String
-    private(set) public var lessons: [Lesson]?
+  private(set) public var name: String
+  private(set) public var lessons: [Lesson]?
+  private(set) public var id: Int
 }
 
 struct Lesson {

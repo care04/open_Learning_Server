@@ -17,7 +17,7 @@ class CoursePage: UIViewController {
   @IBOutlet weak var navi: UINavigationItem!
   @IBOutlet weak var Edit: UIButton!
   
-    var course = Course(id: 0, name: "", shortDescription: "", price: 0, creator: User(name: "", password: ""), units: [Unit(name: "")])
+  var course = Course(id: 0, name: "", shortDescription: "", price: 0, creator: User(name: "", password: ""), units: [Unit(name: "", id: 0)])
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = "Name: " + course.name
@@ -34,10 +34,6 @@ class CoursePage: UIViewController {
     viewDidLoad()
   }
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == segueIds.courseToUnit {
-      guard let unitController = segue.destination as? UnitPage else { return }
-      unitController.unit = (sender as? Unit)!
-    }
     if segue.identifier == segueIds.EditMainCourse {
       guard let mainEdit = segue.destination as? EditMainCoursePage else { return }
       mainEdit.name = course.name
@@ -66,7 +62,8 @@ extension CoursePage: UITableViewDataSource, UITableViewDelegate {
     }
     
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let unit = course.units?[indexPath.row]
-    performSegue(withIdentifier: segueIds.courseToUnit, sender: unit)
+    let unit = course.units![indexPath.row]
+    CourseDataService.instance.setSelectedUnit(unit: unit)
+    performSegue(withIdentifier: segueIds.courseToUnit, sender: nil)
   }
 }
